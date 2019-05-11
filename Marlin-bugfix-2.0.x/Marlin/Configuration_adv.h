@@ -345,7 +345,7 @@
  * Multiple extruders can be assigned to the same pin in which case
  * the fan will turn on when any selected extruder is above the threshold.
  */
-#define E0_AUTO_FAN_PIN -1
+#define E0_AUTO_FAN_PIN 7
 #define E1_AUTO_FAN_PIN -1
 #define E2_AUTO_FAN_PIN -1
 #define E3_AUTO_FAN_PIN -1
@@ -514,8 +514,8 @@
 // @section homing
 
 // Homing hits each endstop, retracts by these distances, then does a slower bump.
-#define X_HOME_BUMP_MM 5
-#define Y_HOME_BUMP_MM 5
+#define X_HOME_BUMP_MM 0
+#define Y_HOME_BUMP_MM 0
 #define Z_HOME_BUMP_MM 2
 #define HOMING_BUMP_DIVISOR { 2, 2, 4 }  // Re-Bump Speed Divisor (Divides the Homing Feedrate)
 //#define QUICK_HOME                     // If homing includes X and Y, do a diagonal move initially
@@ -1630,14 +1630,14 @@
    * Override default SPI pins for TMC2130, TMC2160, TMC2660, TMC5130 and TMC5160 drivers here.
    * The default pins can be found in your board's pins file.
    */
-  //#define X_CS_PIN          -1
-  //#define Y_CS_PIN          -1
-  //#define Z_CS_PIN          -1
+  #define X_CS_PIN          59
+  #define Y_CS_PIN          63
+  #define Z_CS_PIN          40
   //#define X2_CS_PIN         -1
   //#define Y2_CS_PIN         -1
   //#define Z2_CS_PIN         -1
   //#define Z3_CS_PIN         -1
-  //#define E0_CS_PIN         -1
+  #define E0_CS_PIN         42
   //#define E1_CS_PIN         -1
   //#define E2_CS_PIN         -1
   //#define E3_CS_PIN         -1
@@ -1651,9 +1651,9 @@
    * but you can override or define them here.
    */
   //#define TMC_USE_SW_SPI
-  //#define TMC_SW_MOSI       -1
-  //#define TMC_SW_MISO       -1
-  //#define TMC_SW_SCK        -1
+  #define TMC_SW_MOSI       51
+  #define TMC_SW_MISO       50
+  #define TMC_SW_SCK        52
 
   /**
    * Software enable
@@ -1699,7 +1699,7 @@
    * M912 - Clear stepper driver overtemperature pre-warn condition flag.
    * M122 - Report driver parameters (Requires TMC_DEBUG)
    */
-  //#define MONITOR_DRIVER_STATUS
+  #define MONITOR_DRIVER_STATUS
 
   #if ENABLED(MONITOR_DRIVER_STATUS)
     #define CURRENT_STEP_DOWN     50  // [mA]
@@ -1763,7 +1763,7 @@
    * Enable M122 debugging command for TMC stepper drivers.
    * M122 S0/1 will enable continous reporting.
    */
-  //#define TMC_DEBUG
+  #define TMC_DEBUG
 
   /**
    * You can set your own advanced settings by filling in predefined functions.
